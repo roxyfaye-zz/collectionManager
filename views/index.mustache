@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <title>Coin Collection</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="coinslist">
+        <h2>Coins List</h2>
+        <ul>
+            {{#coins}}
+            <li>
+                {{name}}<a href="{{_id}}">Read more</a>
+            </li>
+            {{/coins}}
+        </ul>
+    </div>
+    Tell us about your coin?
+    <form method="POST" action='/'>
+        <input type="text" name="name" placeholder="Give us the name of your coin"> What period of time is your coin from?
+        <select name="year">
+                <option value="1800's">1800's</option>
+                <option value="1900">1900-1950</option>
+                <option value="1950">1950-2000</option>
+                <option value="2000">2000+</option>
+            </select> Where did your coin come from?
+        <input type="text" name="city" placeholder="City">
+        <input type="text" name="state" placeholder="State"> Details about your coin:
+        <textarea name="color" placeholder="What color and value is your coin? (comma separated)"></textarea>
+        <button type="submit">Add your coin</button>
+    </form>
+</body>
+
+</html>

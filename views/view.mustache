@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>Coin Collection</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    view coin {{#coin}}
+    <a href="/">view all</a>
+    <div class="coin_view">
+        Name: {{name}} Year: {{year}} {{#location}} From: {{city}}, {{state}} {{/location}} Details: {{#color}}{{.}}{{/color}}
+    </div>
+    <a href="/edit/{{_id}}">edit</a>
+    <form action="/edit/{{_id}}" method='post'>
+        {{/coin}}
+</body>
+
+</html>

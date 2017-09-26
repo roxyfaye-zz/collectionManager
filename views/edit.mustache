@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Coin Collection</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    edit coin {{#coin}}
+    <a href="/{{_id}}">view</a>
+    <a href="/">view all</a>
+    <div class="coin_edit">
+        <form action="/edit/{{_id}}" method='post'>
+            <input type="text" name="name" placeholder={{name}}>
+            <select name="year">
+                            <option value="1800's">1800's</option>
+                            <option value="1900">1900-1950</option>
+                            <option value="1950">1950-2000</option>
+                            <option value="2000">2000+</option>
+                        </select> {{#location}}
+            <input type="text" name="city" placeholder={{city}} value=>
+            <input type="text" name="state" placeholder={{state}}> {{/location}} {{#location}} From: {{city}}, {{state}}
+            {{/location}} Details:
+            <textarea name="color" placeholder={{#color}}{{.}}{{/color}}></textarea>
+            <button type="submit">save changes</button>
+    </div>
+    {{/coin}}
+
+</body>
+
+</html>
